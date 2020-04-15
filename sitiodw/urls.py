@@ -15,7 +15,7 @@ urlpatterns = [
             authentication_form=forms.LoginUsuarioForm,
             extra_context=
             {
-                'titulo': 'Asociados Pangolín',
+                'titulo': 'Ejemplo MiApp',
                 'fecha': datetime.now().year,
             }
         ),
