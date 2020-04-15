@@ -1,0 +1,47 @@
+{% extends "portal/baseac.html" %}
+
+{% block titulo %}{{ titulo }}{% endblock %}
+
+{% block contenido %}
+<div class="jumbotron">
+    <h1>Django</h1>
+    <p class="lead">Djando es un framework de uso libre con el cual puedes contruir ya sea tu sitio Web o aplicaciones web 
+        usando HTML, CSS y JavaScript
+        </p>
+    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Aprende más &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Para partir</h2>
+        <p>
+            Django te permite crear sitios web dinámicos a través de una poderosa batería de recursos 
+            basada en patrones (patterns-based) que da completo control del markup y que además agiliza 
+            el proceso de desarrollo.
+        </p>
+        <p><a class="btn btn-default" href="https://www.djangoproject.com/start/">Aprende más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Recursos Python</h2>
+        <p>Para obtener recursos de programación en Python consulta el repositorio.</p>
+        <ul>
+            <li>Inicializar un repo</li>
+            <li>Entorno virtual</li>
+            <li>Aplica "requirements.txt"</li>
+        </ul>       
+        <p><a class="btn btn-default" href="https://pypi.org/">Aprende más &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Recuerda</h2>
+        <p>Utiliza GitHub, GitLab o Bitbucket entre otras opciones para mantener el repo del proyecto. 
+           Publica en AWS, Azure, PythonAnywhere o la plataforma que prefieras.
+        </p>
+        <p><a class="btn btn-default" href="https://www.unabonline.cl/">Más información &raquo;</a></p>
+    </div>
+</div>
+
+<!--Ejemplo-->
+<div class="col-xs-4 col-sm-4" style="height:100px;background:red;">A</div>
+<div class="col-xs-8 col-sm-4 float" style="height:100px;background:blue">B</div>
+<div class="col-xs-4 col-sm-4" style="height:100px;background:green">C</div>
+{% endblock %}

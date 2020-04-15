@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block titulo %}{% endblock %}</title>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'portal/content/siteac.css' %}" />
+
+    </head>
+    <body>
+        <!--Bootstrap menu inicial navbar-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">MiApp</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                        <li><a href="{% url 'acercade' %}">Nosotros</a></li>
+                        <li><a href="{% url 'contactenos' %}">Contacto</a></li>
+                    </ul>
+                    <!--Login o Logout-->
+                    {% if user.is_authenticated %}
+                        <form id="logoutForm" action="/logout/" method="post" class="navbar-right">
+                            {% csrf_token %}
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><span class="navbar-brand">Hola {{ user.username }}!</span></li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">
+                                    <span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+                            </ul>
+                        </form>
+                    {% else %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{% url 'acceso' %}">
+                                <span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+                        </ul>
+                    {% endif %}
+                    <!--Login o Logout-->
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            {% block contenido %}{% endblock %}
+            <hr/>
+            <footer>
+                <p>&copy; {{ fecha }} - MiApp</p>
+            </footer>
+        </div>
+    </body>
+</html>
