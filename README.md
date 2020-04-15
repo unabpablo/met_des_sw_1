@@ -3,7 +3,8 @@
 Sitio básico creado con Django para ejemplificar login/logout y utilización de Bootstrap.
 
 <ul>
-<li> python -m venv env
-<li> aplicar requirements.txt
-<li> alumno/Alumno.unab.2020
+  <li> python -m venv env </li>
+  <li> no olvidar activar env </li>
+  <li> aplicar requirements.txt (instalar Django) </li>
+  <li> alumno/Alumno.unab.2020 </li>
 </ul>
